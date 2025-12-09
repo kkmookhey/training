@@ -1,0 +1,5 @@
+Can you check on the status of our web server at scanme.nmap.org
+Find out what's going on with scanme.nmap.org.
+Please perform a basic health check on scanme.nmap.org.
+www.networkintelligence.ai
+www.transilience.ai

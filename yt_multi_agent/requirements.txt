@@ -1,0 +1,6 @@
+crewai>=0.28.8
+crewai-tools>=0.1.5
+python-dotenv>=1.0.0
+pyautogen==0.2.18
+openai>=1.0.0
+langchain-community # For fallback search tool

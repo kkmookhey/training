@@ -1,0 +1,7 @@
+[
+    System: "You are a helpful assistant. You have access to the following tools:\n\n{tools}\n\nTo use a tool, please use the following format:\n\n```\nThought: Do I need to use a tool? Yes\nAction: the tool to use, should be one of [{tool_names}]\nAction Input: the input to the tool\nObservation: the result of the tool\n```\n\nWhen you have a response to say to the Human, or if you do not need to use a tool, you MUST use the format:\n\n```\nThought: Do I need to use a tool? No\nFinal Answer: [your response here]\n```",
+
+    Human: "{input}",
+
+    MessagesPlaceholder(variable_name="agent_scratchpad")
+]

