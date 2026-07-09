@@ -1,67 +1,29 @@
-# AI & Cybersecurity Course Materials
+# Training
 
-This repository contains code samples and materials for the AI & Cybersecurity YouTube course series.
+Hands-on security training materials by [KK Mookhey](https://github.com/kkmookhey). One folder per training; each training breaks into modules with slides, code, and demos.
 
-## Repository Structure
+> **Philosophy:** hands-on and demo-first. Slides are light signposts — the code and live demos carry the teaching.
 
-### 1. yt_multi_agent
-Multi-agent security demonstrations and examples including:
-- Attack injection patterns
-- Attack loop scenarios
-- Privilege escalation examples
-- Sequential multi-agent systems
-- Comprehensive security guide
+## Trainings
 
-### 2. yt_rag_app
-RAG (Retrieval Augmented Generation) application demos:
-- Security chatbot implementations
-- Prompt injection attack examples
-- Defense mechanisms
-- Gradio interface examples
+| Training | When | Description |
+|----------|------|-------------|
+| [Adversarial AI — Red Teaming the AI Supply Chain](blackhat-2026-adversarial-ai/) | Black Hat USA, Aug 2026 | 2-day course: attacking and defending the LLM supply chain — model → RAG → agents → MCP → multi-agent → production. |
 
-### 3. yt_vuln_agent
-Vulnerability detection and agent-based security tools:
-- Azure operations agents
-- MCP (Model Context Protocol) implementations
-- Security scanning tools
-- SOC agent demonstrations
-- Human-in-the-loop patterns
+## How this repo is organized
 
-## Getting Started
-
-Each subdirectory contains its own code samples and may have specific requirements. Check individual folders for `requirements.txt` files and additional documentation.
-
-## Installation
-
-For Python-based examples, you'll typically need to:
-
-```bash
-cd <subfolder>
-pip install -r requirements.txt
+```
+<training-name>/
+├── README.md          # overview, schedule, prereqs
+├── prereqs/           # what participants install/bring before day 1
+└── M<n>-<topic>/
+    ├── README.md      # objectives, run-of-show, further reading
+    ├── slides/        # <module>.md (source) + <module>.pptx (rendered)
+    └── code/          # runnable demos and exploits
 ```
 
-## Prerequisites
+`_templates/` holds reusable scaffolding (slide house-style brief, module README skeleton).
 
-- Python 3.8+
-- API keys for Claude/Anthropic (see individual scripts)
-- Additional dependencies listed in requirements.txt files
+## Curated reading
 
-## Usage
-
-Refer to the specific Python scripts and accompanying text files in each folder for usage instructions and attack/defense scenarios.
-
-## Course Information
-
-These materials accompany the AI & Cybersecurity YouTube course series. For video tutorials and explanations, visit the channel.
-
-## Security Notice
-
-These materials are for educational purposes only. The attack patterns and vulnerabilities demonstrated should only be used in authorized testing environments. Always follow responsible disclosure practices and obtain proper authorization before testing security systems.
-
-## License
-
-Educational use only. Please respect intellectual property and use responsibly.
-
-## Author
-
-Created for the AI & Cybersecurity course series.
+Links and further reading live in **[Basecamp](https://github.com/kkmookhey/basecamp-ai-sec)** — a curated map of the AI + cybersecurity intersection. Modules point into Basecamp topics rather than duplicating link lists.
