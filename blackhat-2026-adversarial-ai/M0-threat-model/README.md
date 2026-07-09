@@ -4,13 +4,13 @@
 > **OWASP:** — · **Halcyon layer:** — · **Model tier:** Gandalf (hosted)
 
 ## Objectives
-- **Core (everyone):** pre-flight checker green (Docker + model), draw the supply-chain attack map, and beat Gandalf levels 1–3.
+- **Core (everyone):** reach-test green (reach the target · Burp proxy · cert trusted), draw the supply-chain attack map, and beat Gandalf levels 1–3.
 - **Stretch:** push Gandalf to its later levels; try the Gandalf *agent* variant (Day-2 warm-up).
 
 ## Run-of-show (~45 min)
 | Phase | What happens |
 |-------|--------------|
-| Build | run the pre-flight checker; tour Halcyon's architecture |
+| Build | run the reach-test (browser + Burp reaches the hosted target); tour Halcyon's architecture |
 | Break | attacker mental model; Gandalf warm-up (browser-only) |
 | Secure | frame the two-day supply-chain journey: model → RAG → tools → MCP → multi-agent → prod |
 
@@ -18,7 +18,7 @@
 - Gandalf (Lakera) — hosted, browser-only, absorbs setup chaos while stragglers finish install.
 
 ## Validation
-Warm-up module — no audit event. Success = pre-flight green + Gandalf progress (self-reported).
+Warm-up module — no audit event. Success = reach-test green + Gandalf progress (self-reported).
 
 ## Further reading
 → Basecamp: [Foundations](https://github.com/kkmookhey/basecamp-ai-sec/blob/main/docs/topics/01-foundations.md)

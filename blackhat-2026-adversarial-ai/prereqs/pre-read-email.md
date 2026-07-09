@@ -1,30 +1,32 @@
-# Pre-read email — draft
+# Pre-read email — draft (revised for hosted model)
 
-> Draft for KK to send to registered participants. Swap the `[bracketed]` bits. The setup link only works once this branch is merged to `main`.
+> Draft for KK to send to registered participants. Swap the `[bracketed]` bits. The setup + reach-test links only work once the branch is merged to `main` and the hosted instance is live.
 
 ---
 
-**Subject:** Your Black Hat course — 20 minutes of setup before we start
+**Subject:** Your Black Hat course — 15 minutes of setup before we start
 
 Hi [first name],
 
 Looking forward to having you in **Adversarial AI — Red Teaming the AI Supply Chain** at Black Hat next month. This is a hands-on course — we spend most of the two days attacking and defending a live target, not sitting through slides — so a little setup ahead of time keeps us hacking instead of installing on day one.
 
-**Please do this before you arrive** (≈20 minutes, plus one download):
+Good news: **nothing heavy to install, nothing to download in advance.** The target runs on our infrastructure — you reach it from your browser. You just need a laptop you fully control and one free tool.
+
+**Please do this before you arrive** (~15 minutes):
 
 👉 **Setup guide:** https://github.com/kkmookhey/training/tree/main/blackhat-2026-adversarial-ai/prereqs
 
-Two things to sort out:
+1. **Bring a laptop you can install software on — and add a CA certificate to.** This is the one that matters. We intercept and modify web traffic throughout the course, which needs Burp's certificate trusted in your browser. Locked-down corporate laptops often block that. If yours might, **bring a personal machine.**
+2. **Install Burp Suite Community Edition** (free) and route your browser through it. The guide walks you through the proxy setup and the CA certificate — the same setup powers the warm-up labs.
+3. **Day 2 only: bring your own LLM API key** (OpenAI or Anthropic) with **$10–20** of credit. Day 1 needs no key. Exact models are in the guide.
+4. **Reach-test before you arrive.** The guide has a link that confirms you can reach the target and that your proxy is working — green in about a minute. Do it at home so any cert/proxy issue surfaces before class, not during it.
 
-1. **Day 1 runs on your own machine, offline and keyless.** You'll install Docker and a small local model (a one-time ~5 GB download — do it on home WiFi, not the conference network).
-2. **Day 2 uses your own LLM API key** (OpenAI or Anthropic) with **$10–20** of credit. Instructions and the exact models are in the guide.
+**What trips people up:**
 
-**Two things that trip people up — check them early:**
+- **Admin rights.** Installing Burp and trusting its certificate needs a machine you control. Sort this now.
+- **The proxy/cert step.** Run the reach-test early — it's the one thing worth checking twice.
 
-- **Corporate laptops** often block Docker. If yours might, sort it now or bring a personal machine.
-- **Do the model download at home.** Don't count on Black Hat WiFi for 5 GB.
-
-You don't need to download the lab itself — you'll get it on a **USB drive at the venue**, and the very first screen checks your setup is green in about a minute.
+You'll need **internet in the room** (the venue provides it; a phone hotspot is a fine backup). **No Docker, no big downloads, no USB** — just a browser, Burp, and on Day 2 your key.
 
 If you hit a wall, reply to this email and we'll get you sorted before the class starts.
 
@@ -36,6 +38,7 @@ KK
 ---
 
 ## Checklist for KK before sending
-- [ ] Merge the `restructure/blackhat-2026` PR so the setup link resolves on `main`.
-- [ ] Confirm the venue/date line if you want it in the email.
+- [ ] Merge the `restructure/blackhat-2026` PR so the setup + reach-test links resolve on `main`.
+- [ ] Confirm the hosted instance + reach-test endpoint are live.
+- [ ] Confirm venue/date line if you want it in the email.
 - [ ] Confirm both API providers are acceptable (guide currently lists OpenAI + Anthropic).

@@ -4,7 +4,7 @@
 
 You attack and defend one target — **Halcyon**, an AI-first neobank whose assistant "Halo" grows new attack surface every module. Same company for two days. Every module runs the **Build → Break → Secure** loop.
 
-> **Before you arrive:** complete the **[prerequisites and setup →](prereqs/)**. Day 1 is keyless (runs on a local model); Day 2 needs your own API key.
+> **Before you arrive:** complete the **[prerequisites and setup →](prereqs/)**. Halcyon is **hosted** — you attack it from your browser through Burp; no Docker, no downloads. Day 1 is keyless; Day 2 needs your own API key.
 
 ## The spine
 
@@ -20,9 +20,9 @@ model → RAG → tools/agents → MCP → multi-agent → production
 | Module | Topic | OWASP | Model |
 |--------|-------|-------|-------|
 | [M0](M0-threat-model/) | Threat model + range check | — | Gandalf (hosted) |
-| [M1](M1-prompt-injection/) | Prompt injection | LLM01 | Ollama (local) |
-| [M2](M2-output-handling/) | Output handling & disclosure | LLM05/02 | Ollama (local) |
-| [M3](M3-rag-attacks/) | RAG attacks | LLM08 | Ollama (local) |
+| [M1](M1-prompt-injection/) | Prompt injection | LLM01 | Ollama (shared, keyless) |
+| [M2](M2-output-handling/) | Output handling & disclosure | LLM05/02 | Ollama (shared, keyless) |
+| [M3](M3-rag-attacks/) | RAG attacks | LLM08 | Ollama (shared, keyless) |
 | [M4](M4-ml-supply-chain/) | Poisoning & ML supply chain | LLM04/03 | none (artifact) |
 
 ### Day 2 — Agency and autonomy
@@ -35,7 +35,7 @@ model → RAG → tools/agents → MCP → multi-agent → production
 
 ## The lab: Halcyon
 
-[`halcyon/`](halcyon/) — a deliberately-vulnerable single app you Build/Break/Secure across all modules. Deterministic, resettable, mechanism-validated (pass/fail comes from an audit log, never the model's words). Distributed on USB at the venue.
+[`halcyon/`](halcyon/) — a deliberately-vulnerable single app you Build/Break/Secure across all modules. Deterministic, resettable, mechanism-validated (pass/fail comes from an audit log, never the model's words). **Hosted, container-per-participant**, reachable from your browser.
 
 ## Further reading
 
