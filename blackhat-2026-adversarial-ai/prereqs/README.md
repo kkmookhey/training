@@ -27,7 +27,6 @@ Here's everything to bring. One list — sort it all before you arrive.
 
 7. **Recommended AI red-teaming tools** *(optional — pre-install for a head start on the later automation/defense labs; follow each project's README for install).* We'll point these at the hardened stack:
    - **PyRIT** (Microsoft) — automated red-team orchestration — <https://github.com/Azure/PyRIT>
-   - **garak** (NVIDIA) — LLM vulnerability scanner — <https://github.com/NVIDIA/garak>
    - **Promptfoo** — prompt & red-team evals at scale — <https://github.com/promptfoo/promptfoo>
    - **DeepTeam** (optional) — LLM red-teaming framework — <https://github.com/confident-ai/deepteam>
    - **P4RS3LT0NGV3** — payload obfuscation; **provided in class**, browser-based, nothing to install.
