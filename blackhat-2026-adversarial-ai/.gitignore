@@ -17,3 +17,6 @@ chroma_db/
 # Internal presenter aids (local; not for the repo)
 STAGE-COMMANDS.txt
 concept-demos-guide.html
+
+# Office temp/lock files (PowerPoint/Word "~$..." while a deck is open)
+~$*
