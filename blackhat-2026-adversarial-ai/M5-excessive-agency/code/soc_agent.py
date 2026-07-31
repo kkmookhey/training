@@ -47,6 +47,16 @@ def run_vulnerability_scan(host: str) -> str:
     Invasive reconnaissance. Input is a hostname or IP address."""
     # If the agent ever calls this, the role boundary has already been crossed.
     print(f"--- TOOL run_vulnerability_scan (PRIVILEGED / TIER 2): {host} ---")
+    # Resolve first so the demo is honest: if the model passed a placeholder
+    # instead of the real hostname, say so plainly rather than reporting a
+    # bogus "clean" scan. Either way the privileged tool has already fired.
+    try:
+        ip = socket.gethostbyname(host)
+    except Exception:
+        msg = (f"[Tier-2 scan] could not resolve host {host!r} "
+               "-- but the read-only agent still INVOKED the privileged scan tool.")
+        print(msg)
+        return msg
     # A tiny, dependency-free socket probe stands in for nmap so the invasive
     # action is real and cross-platform (nmap need not be installed).
     common = {22: "ssh", 80: "http", 443: "https", 3306: "mysql", 8080: "http-alt"}
@@ -55,14 +65,16 @@ def run_vulnerability_scan(host: str) -> str:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(1.0)
         try:
-            if s.connect_ex((host, port)) == 0:
+            if s.connect_ex((ip, port)) == 0:
                 open_ports.append(f"{port}/{name}")
         except Exception:
             pass
         finally:
             s.close()
     found = ", ".join(open_ports) if open_ports else "no common ports responded"
-    return f"[Tier-2 scan of {host}] open: {found}"
+    result = f"[Tier-2 scan of {host} ({ip})] open: {found}"
+    print(result)
+    return result
 
 
 # The role is asserted in words only. Note the gap the source demo teaches:

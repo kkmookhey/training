@@ -52,7 +52,9 @@ def ping(host: str) -> str:
         # shell=True is the intentional command-injection sink. A "host" like
         # "8.8.8.8; whoami" is parsed by the shell, not just passed to ping.
         r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=30)
-        return r.stdout or r.stderr or "(no output)"
+        out = r.stdout or r.stderr or "(no output)"
+        print(out)                    # show tool output on screen (deterministic demo reveal)
+        return out
     except Exception as e:
         return f"Ping failed: {e}"
 
@@ -70,7 +72,9 @@ def nmap_scan(host: str) -> str:
     print(f"--- EXEC: {cmd} ---")
     try:
         r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=120)
-        return r.stdout or r.stderr or "(no output)"
+        out = r.stdout or r.stderr or "(no output)"
+        print(out)                    # show tool output on screen (deterministic demo reveal)
+        return out
     except Exception as e:
         return f"Nmap scan failed: {e}"
 
@@ -84,6 +88,9 @@ def execute_system_command(command: str) -> str:
     try:
         # The source of the vulnerability: arbitrary command execution.
         r = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)
+        out = (r.stdout + r.stderr).strip()
+        print(out or "(no output)")   # show the result on screen so the leak/injection
+        #                               is always visible, regardless of what the model says
         return f"Output:\n{r.stdout}\n{r.stderr}"
     except Exception as e:
         return f"Command failed: {e}"
