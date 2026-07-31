@@ -1,0 +1,12 @@
+# Pinned to the exact versions verified end-to-end on 2026-07-30.
+# LangChain 1.x moves modules between releases - keep these pins for the
+# conference so a fresh install can't break the demo.
+langchain==1.3.14
+langchain-text-splitters==1.1.2
+langchain-community==0.4.2
+langchain-ollama==1.1.0
+langchain-chroma==1.1.0
+langchain-huggingface==1.2.2
+sentence-transformers==5.6.1
+chromadb==1.5.9
+pypdf==6.14.2

@@ -1,0 +1,4 @@
+venv/
+__pycache__/
+# NOTE: .env is deliberately NOT ignored here - it is a FAKE-secrets demo prop
+# for attack_privesc.py, not a real secrets file.
