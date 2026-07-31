@@ -2,7 +2,7 @@
 
 > **This page is a living document.** It will keep changing as we get closer to the course — check back before you travel. Training materials (slides, lab code, walkthroughs) will also land in **this same repo** as we build them out.
 
-This is a hands-on course. You won't just *attack* Halcyon (our deliberately-vulnerable AI neobank) — you'll **read its code, break it, and then modify the code to secure it.** That "Build → Break → Secure" loop is the whole course, and it means you need to be able to edit and run the app, not just point a browser at it.
+This is a hands-on course. You won't just *attack* Eiger (our deliberately-vulnerable AI neobank) — you'll **read its code, break it, and then modify the code to secure it.** That "Build → Break → Secure" loop is the whole course, and it means you need to be able to edit and run the app, not just point a browser at it.
 
 Here's everything to bring. One list — sort it all before you arrive.
 
@@ -14,11 +14,11 @@ Here's everything to bring. One list — sort it all before you arrive.
 
 2. **Burp Suite Community Edition** (free) — with your browser proxied through it and its **CA certificate trusted.** We intercept and modify web traffic throughout the course. Setup steps below.
 
-3. **An AI coding environment you're comfortable in** — **Claude Code**, **Cursor**, Windsurf, VS Code + Copilot, or whatever you prefer — signed in with whatever subscription or API key it needs. You'll use it to modify Halcyon's code during the Secure phase of each module, so bring the setup you're fastest in.
+3. **An AI coding environment you're comfortable in** — **Claude Code**, **Cursor**, Windsurf, VS Code + Copilot, or whatever you prefer — signed in with whatever subscription or API key it needs. You'll use it to modify Eiger's code during the Secure phase of each module, so bring the setup you're fastest in.
 
-4. **Somewhere to run and deploy Halcyon as we go.** In order of preference:
+4. **Somewhere to run and deploy Eiger as we go.** In order of preference:
    - **Your own cloud account** (AWS / GCP / Azure / DigitalOcean — anything you can spin small instances up on). Preferred: you'll deploy your modified app as we progress, which mirrors real work.
-   - **Or run the Halcyon container we provide locally** — needs a container runtime (Docker Desktop or Podman).
+   - **Or run the Eiger container we provide locally** — needs a container runtime (Docker Desktop or Podman).
    - A hosted fallback will be available if neither works on the day, but plan to run your own.
 
 5. **An LLM API key — OpenAI or Anthropic — with $10–20 of credit.** Used once we reach the agent labs (reliable tool-calling). This can be the same key your AI coding environment uses. A rate-limited backup key pool is available in class for the occasional dead key, but bring your own.
@@ -52,7 +52,7 @@ Here's everything to bring. One list — sort it all before you arrive.
 
 👉 **Reach-test link:** `[INSTRUCTOR: paste hosted reach-test URL]`
 
-Open it with your browser proxied through Burp. Green means you can reach Halcyon, your traffic is flowing through Burp, and the certificate is trusted. Red is almost always the proxy or cert step above — fix it now, not in class.
+Open it with your browser proxied through Burp. Green means you can reach Eiger, your traffic is flowing through Burp, and the certificate is trusted. Red is almost always the proxy or cert step above — fix it now, not in class.
 
 ### LLM API key
 

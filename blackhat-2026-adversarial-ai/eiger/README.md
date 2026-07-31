@@ -1,6 +1,6 @@
-# Halcyon — the lab platform
+# Eiger — the lab platform
 
-Deliberately-vulnerable single app that participants Build/Break/Secure across all modules. **Halcyon** is an AI-first neobank; its assistant **Halo** grows attack surface each module (L0 chatbot → L1 RAG → L2 agent → L3 MCP → L4 multi-agent → L5 production).
+Deliberately-vulnerable single app that participants Build/Break/Secure across all modules. **Eiger** is an AI-first neobank; its assistant **Iggy** grows attack surface each module (L0 chatbot → L1 RAG → L2 agent → L3 MCP → L4 multi-agent → L5 production).
 
 **Deployment:** hosted, **container-per-participant**, with a **shared Ollama** backend and an **external progress store**; the same images **dual-deploy to cloud (primary) and a local-LAN server (fallback)**. Not on participant laptops.
 

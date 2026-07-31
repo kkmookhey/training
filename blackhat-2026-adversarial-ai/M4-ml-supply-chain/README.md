@@ -1,7 +1,7 @@
 # M4 · Poisoning & ML Supply Chain
 
 > **One-line premise:** the model artifact itself is code — loading an untrusted one executes it.
-> **OWASP:** LLM04 / LLM03 · **Halcyon layer:** L1 artifact · **Model tier:** none (no live LLM)
+> **OWASP:** LLM04 / LLM03 · **Eiger layer:** L1 artifact · **Model tier:** none (no live LLM)
 
 ## Objectives
 - **Core (participant):** detect the malicious artifact with the provided tooling (pickle-opcode / unsafe-globals scan).
@@ -11,7 +11,7 @@
 ## Run-of-show (~45 min)
 | Phase | What happens |
 |-------|--------------|
-| Build | Halcyon loads an embedding model / pickled artifact from an untrusted hub |
+| Build | Eiger loads an embedding model / pickled artifact from an untrusted hub |
 | Break | *instructor demo:* deserialization RCE; participants scan artifacts for the badness |
 | Secure | flip `SEC_ARTIFACT_VERIFICATION`; safetensors-only, hash pinning, no arbitrary pickle |
 

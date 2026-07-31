@@ -1,10 +1,10 @@
 # M6 · MCP Security
 
-> **One-line premise:** the tools Halo trusts describe themselves — poison the description, own the agent.
-> **OWASP:** — · **Halcyon layer:** L3 · **Model tier:** BYOK
+> **One-line premise:** the tools Iggy trusts describe themselves — poison the description, own the agent.
+> **OWASP:** — · **Eiger layer:** L3 · **Model tier:** BYOK
 
 ## Objectives
-- **Core (everyone):** tool-description poisoning — a hidden instruction in a tool description makes Halo leak data / call an unintended tool.
+- **Core (everyone):** tool-description poisoning — a hidden instruction in a tool description makes Iggy leak data / call an unintended tool.
 - **Stretch (pick one):** rug pull · tool shadowing · token theft.
 
 ## Run-of-show (~75 min)
