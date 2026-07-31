@@ -1,7 +1,7 @@
 # M<n> · <Module Title>
 
 > **One-line premise:** <what the attacker achieves in this module>.
-> **OWASP:** <LLMxx> · **Halcyon layer:** <L?> · **Model tier:** <Ollama | BYOK | none>
+> **OWASP:** <LLMxx> · **Eiger layer:** <L?> · **Model tier:** <Ollama | BYOK | none>
 
 ## Objectives
 
