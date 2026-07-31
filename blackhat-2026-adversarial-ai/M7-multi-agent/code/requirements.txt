@@ -1,0 +1,12 @@
+# M7 (MULTI-AGENT / crewAI) - pinned to versions verified end-to-end 2026-07-30.
+#
+# *** THIS MODULE USES ITS OWN venv (M7-multi-agent/code/venv), NOT the shared
+#     top-level .venv. *** crewAI pins its own conflicting langchain / pydantic /
+#     litellm stack; installing it into the shared venv would break the M3/M5/M6
+#     pins. Keeping it isolated (as the task's crewAI exception allows) lets both
+#     worlds stay reproducible.
+#
+# Built with Python 3.13 (crewai's wheels are happiest there; the shared venv is
+# 3.14). Create with:  /opt/homebrew/bin/python3.13 -m venv venv
+crewai==1.15.9
+crewai-tools==1.15.9

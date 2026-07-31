@@ -1,0 +1,19 @@
+# Shared virtualenv for the concept demos
+.venv/
+
+# Per-module venvs (e.g. M7 crewAI)
+venv/
+
+# Python cruft
+__pycache__/
+*.pyc
+
+# Local vector store (M3 RAG)
+chroma_db/
+
+# OS cruft
+.DS_Store
+
+# Internal presenter aids (local; not for the repo)
+STAGE-COMMANDS.txt
+concept-demos-guide.html

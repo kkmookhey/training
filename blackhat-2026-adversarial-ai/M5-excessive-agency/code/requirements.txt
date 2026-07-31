@@ -1,0 +1,13 @@
+# M5 (AGENT) - pinned to the versions verified end-to-end on 2026-07-30.
+# These are a SUBSET of the shared top-level requirements.txt; installing the
+# shared venv covers this module. Listed here so the folder is self-contained.
+#
+# NOTE on LangChain 1.x: the deck's create_tool_calling_agent + AgentExecutor
+# were removed from langchain.agents in 1.0 (they now live in langchain-classic).
+# We use the modern langchain.agents.create_agent (LangGraph-based) instead - it
+# is keyless-Ollama friendly and needs no network prompt pull (no langchain.hub).
+langchain==1.3.14
+langchain-core==1.5.3
+langchain-ollama==1.1.0
+langgraph==1.2.10
+# BYOK option only: pip install langchain-openai

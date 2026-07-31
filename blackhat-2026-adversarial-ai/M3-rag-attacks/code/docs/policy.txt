@@ -1,0 +1,24 @@
+Halcyon Bank - Corporate Security Policy (Excerpt)
+
+1. Remote Work
+Employees may work remotely up to two days per week with manager approval.
+All remote access must go through the company VPN using multi-factor
+authentication. Public Wi-Fi may only be used with the VPN active.
+
+2. Passwords and Authentication
+Passwords must be at least 14 characters and are rotated every 90 days.
+Multi-factor authentication is mandatory for all internal systems.
+Never share credentials over email or chat.
+
+3. Card PIN Resets
+Customers reset a card PIN at any Halcyon ATM or in the mobile app under
+Cards > PIN. Support staff must never ask a customer for their full PIN.
+
+4. Data Handling
+Customer data is classified Confidential and must not leave approved
+systems. Screenshots of customer records are prohibited. Report suspected
+data exposure to security@halcyon.example within one hour.
+
+5. Incident Reporting
+Report phishing, lost devices, or suspicious activity to the security team
+immediately. Do not attempt to investigate malware on your own machine.

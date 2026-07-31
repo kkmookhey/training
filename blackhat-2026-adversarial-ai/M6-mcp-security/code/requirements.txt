@@ -1,0 +1,8 @@
+# M6 (MCP) - pinned to the versions verified end-to-end on 2026-07-30.
+# Subset of the shared top-level requirements.txt.
+#
+# IMPORTANT: pin mcp to 1.x. mcp 2.0.0 removed the classic Server decorator API
+# (@server.list_tools / @server.call_tool) AND the mcp.server.fastmcp module -
+# both of which the deck's code and these demos use. 1.29.0 keeps them and
+# installs cleanly on Python 3.14.
+mcp==1.29.0
