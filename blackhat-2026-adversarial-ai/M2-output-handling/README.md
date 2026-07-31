@@ -1,10 +1,10 @@
 # M2 · Output Handling & Disclosure
 
-> **One-line premise:** what Halo *emits* is as dangerous as what it's told — land an XSS and leak its brain.
-> **OWASP:** LLM05 / LLM02 · **Halcyon layer:** L0/L1 · **Model tier:** Ollama (local)
+> **One-line premise:** what Iggy *emits* is as dangerous as what it's told — land an XSS and leak its brain.
+> **OWASP:** LLM05 / LLM02 · **Eiger layer:** L0/L1 · **Model tier:** Ollama (local)
 
 ## Objectives
-- **Core (everyone):** land an XSS via a data field Halo echoes into the chat UI.
+- **Core (everyone):** land an XSS via a data field Iggy echoes into the chat UI.
 - **Stretch:** chain disclosure — leak the full system prompt + tool schema, then use that map to craft a targeted injection.
 
 ## Run-of-show (~60 min)

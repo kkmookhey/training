@@ -1,7 +1,7 @@
 # M7 · Multi-Agent
 
 > **One-line premise:** agents trust each other — inject one and the fraud approves itself downstream.
-> **OWASP:** — · **Halcyon layer:** L4 · **Model tier:** BYOK
+> **OWASP:** — · **Eiger layer:** L4 · **Model tier:** BYOK
 
 ## Objectives
 - **Core (everyone):** inject at the dispute-text surface → the action agent approves your fraudulent refund.

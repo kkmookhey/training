@@ -2,9 +2,9 @@
 
 **Black Hat USA, August 2026 · 2-day hands-on course**
 
-You attack and defend one target — **Halcyon**, an AI-first neobank whose assistant "Halo" grows new attack surface every module. Same company for two days. Every module runs the **Build → Break → Secure** loop.
+You attack and defend one target — **Eiger**, an AI-first neobank whose assistant "Iggy" grows new attack surface every module. Same company for two days. Every module runs the **Build → Break → Secure** loop.
 
-> **Before you arrive:** complete the **[prerequisites and setup →](prereqs/)**. Halcyon is **hosted** — you attack it from your browser through Burp; no Docker, no downloads. Day 1 is keyless; Day 2 needs your own API key.
+> **Before you arrive:** complete the **[prerequisites and setup →](prereqs/)**. Eiger is **hosted** — you attack it from your browser through Burp; no Docker, no downloads. Day 1 is keyless; Day 2 needs your own API key.
 
 ## The spine
 
@@ -33,9 +33,9 @@ model → RAG → tools/agents → MCP → multi-agent → production
 | [M7](M7-multi-agent/) | Multi-agent | — | BYOK |
 | [M8](M8-production-defense/) | Production, defense + capstone | — | BYOK |
 
-## The lab: Halcyon
+## The lab: Eiger
 
-[`halcyon/`](halcyon/) — a deliberately-vulnerable single app you Build/Break/Secure across all modules. Deterministic, resettable, mechanism-validated (pass/fail comes from an audit log, never the model's words). **Hosted, container-per-participant**, reachable from your browser.
+[`eiger/`](eiger/) — a deliberately-vulnerable single app you Build/Break/Secure across all modules. Deterministic, resettable, mechanism-validated (pass/fail comes from an audit log, never the model's words). **Hosted, container-per-participant**, reachable from your browser.
 
 ## Further reading
 
