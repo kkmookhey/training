@@ -36,6 +36,8 @@ Addresses batch-1 feedback themes 1 (signposting) & 3 (level mismatch): a stuck 
 - **L7–8:** combine everything — indirect ask **+** encoded output **+** avoid trigger words, in one prompt.
 </details>
 
+**🏁 Cracked it?** Don't wait around — try Lakera's **other games** (e.g. **Mosscap**, and Lakera's newer Gandalf challenges) or **Prompt Airlines** (`promptairlines.com`, a prompt-injection CTF). Same muscles, fresh puzzles.
+
 **🔗 Why it's here** — this is prompt injection and guardrail evasion in miniature — the exact ideas you'll weaponise in **M1** (injection) and **M8** (obfuscating past a filter), on your own bank.
 
 ---

@@ -63,3 +63,6 @@ chromadb/
 
 # Office temp/lock files
 ~$*
+
+# Internal instructor reference — never commit (self-contained run of show)
+RUN-OF-SHOW.md

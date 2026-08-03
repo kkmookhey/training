@@ -2,7 +2,8 @@
 Opener · Course intro + instructor bios + caveats — slide source
 Render: paste this + _templates/slide-brief.md into Claude Design → opener.pptx
 Convention: each slide separated by `---`; speaker notes in <!-- Notes: ... -->.
-Runs FIRST, before M0. Keep it tight (~10 min) — the room wants to start breaking things.
+Runs FIRST, before M0. Keep it tight (~12 min) — the room wants to start breaking things.
+Batch-2 revision: adds the "Two ways to play" lane slide, the five-beat rhythm, and the "Meet Anna" intro.
 TODO(KK): fill the Venkat bio slide (his LinkedIn 404'd; nothing was auto-filled).
 -->
 
@@ -45,14 +46,47 @@ Day 1 runs **keyless** on a shared model. Day 2 is **BYOK** — bring your own k
 
 ---
 
-## How every module works
+## Two ways to play — pick your lane
 
-- **Hosted lab** — nothing to install; reach-test is screen 1.
-- **Build → Break → Secure**, each module.
-- Two levels per module: **L1 = vulnerable**, **L2 = secure**. Flip one flag, run the *same* attack, watch it die.
-- **You pass by mechanism, not by the model's words** — grading queries an append-only audit log, never a string match on the reply. Each module has a **core** objective and a **stretch**.
+| 🗡 **Attacker** | 🔧 **Builder** |
+|---|---|
+| Hit the **hosted** Eiger from your browser | **Clone** the repo, run the module's code on your laptop |
+| Zero setup — the default | Build → Break → Secure the **real guard code** yourself |
+| Fast: just attack | Flip the `SEC_*` flag in the source, watch the attack die locally |
 
-<!-- Notes: The "mechanism, not words" point is the intellectual spine — say it now and repeat it whenever a model phrases something oddly. It's *why* the labs are reproducible despite a non-deterministic model, and it's a real lesson for how to build test/detection for AI systems. -->
+Switch lanes **any module**. Builders: setup is one page in `prereqs/`.
+
+<!-- Notes: New for this cohort — name the builder lane as a real choice, not a footnote. Most will attack the hosted app; the ~third who want a methodology to take home run the code locally and read the actual guard. The builder lane is the on-ramp to the same Claude-Code-against-real-code method you'll watch with Anna — the direct answer to "can I use this in my own environment?" -->
+
+---
+
+## Build → Break → Secure — the five beats
+
+Every module, the **same five beats** — so you're never lost about where we are:
+
+**① Concept** → **② Worked example** → **③ Break** → **④ Secure** → **⑤ Reality check**
+
+- **① Concept** — the layer + the attack, in two slides.
+- **② Worked example** — the mechanism in ~20 lines you can run.
+- **③ Break** — land the attack on Eiger. Objective + pass-when are on your lab card.
+- **④ Secure** — flip **one** flag, run the **same** attack, watch it die. *The diff is the lesson.*
+- **⑤ Reality check** — is this real in production? We test it live against **Anna**.
+
+**You pass by mechanism, not the model's words** — grading queries an append-only audit log, never a string match. Core + stretch per module.
+
+<!-- Notes: This is the spine of the rebuilt flow — same five beats every module, so nobody's lost about where we are. ③/④ are the hands-on core; ④ (Secure) is never sacrificed for time. ⑤ (Anna) lands at four points across the two days. "Mechanism not words" is why 32 people attacking a non-deterministic model grades reliably — and it's how they should instrument their own AI for detection. -->
+
+---
+
+## Meet Anna — the real app
+
+Eiger is the lab. **Anna is a real production AI agent** — HubSpot, email, Slack, on Bedrock, with an autonomous planner→reviewer loop.
+
+At **four points** across the two days we don't just theorise — we **drive Claude Code against Anna's real code, live**, and deliver a verdict: *is this attack real, or theater?*
+
+> **Everything you break in the lab, we test against a real app. That's the method you take home.**
+
+<!-- Notes: The through-line and the energiser — introduce Anna now (Anchor 1). The room raises hypotheses and we investigate live at L0/L1, then L3 (MCP) and L4 (multi-agent). This is the direct answer to the recurring ask — "can I use this in my own environment?" — yes, and this is exactly how. Keep the intro to a minute; the payoff is the live investigations. -->
 
 ---
 
@@ -82,7 +116,7 @@ Day 1 runs **keyless** on a shared model. Day 2 is **BYOK** — bring your own k
 ## To get the most out of today
 
 - **Be patient with the shared lab.** It's one hosted instance for the whole room — under load, a reply may take a few seconds. That's queueing, **not** a failure. Re-run if needed.
-- **Run it locally if you can.** For the snappiest experience, run Eiger and/or the concept demos on your laptop — one-page setup in the repo README (link on the reach-test screen).
+- **Pick a lane.** Attack the hosted lab (zero setup) or take the **builder lane** — run the code on your laptop and build-break-secure it yourself. Switch anytime; setup is one page in `prereqs/`.
 - **Day 2: bring a key.** OpenAI or Anthropic. Frontier models chain tool calls reliably; the keyless model demonstrates the mechanism but won't.
 - **Use the sanctioned payloads for the graded run.** A cleverer attack can be *better* and still not score — grading checks a mechanism. Improvise after you've passed, and show us.
 
@@ -102,6 +136,6 @@ Day 1 runs **keyless** on a shared model. Day 2 is **BYOK** — bring your own k
 
 ## → Let's get on the range
 
-Next: **M0 — Threat Model + Reach-Test.** Get green, then we start breaking things.
+Next: **M0 — Threat Model + Reach-Test**, then the **Gandalf** warm-up (a hosted game — self-serve link coming). Get green, then we start breaking things.
 
-<!-- Notes: Hard cut to M0. Momentum is everything in the first 15 minutes. -->
+<!-- Notes: Hard cut to M0. Gandalf is the self-serve warm-up — prompt injection + guardrail evasion in miniature, foreshadowing M1 and M8; anyone who cracks it early moves to the other Lakera games or Prompt Airlines. Momentum is everything in the first 15 minutes. -->
