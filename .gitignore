@@ -60,3 +60,6 @@ Thumbs.db
 # Chroma DB (if used for RAG)
 chroma_db/
 chromadb/
+
+# Office temp/lock files
+~$*
