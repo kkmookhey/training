@@ -33,16 +33,19 @@ For every layer you **Build** it, **Break** it, then **Secure** it.
 
 ## The two-day arc
 
-| Day 1 — the model & its data | Day 2 — the model with hands |
+| Day 1 — the model & its data *(keyless)* | Day 2 — the model with hands *(BYOK)* |
 |---|---|
-| **L0** chatbot · prompt injection, output handling | **L2** agent · excessive agency + supply chain |
-| **L1** RAG · knowledge-base poisoning | **L3** MCP · tool poisoning |
-| (keyless — shared model) | **L4** multi-agent · cascading trust |
-| | **L5** production · guardrails + capstone |
+| **F0** understanding LLMs | **L3** MCP · tool poisoning |
+| **L0** chatbot · prompt injection, output handling | **L4** multi-agent · cascading trust |
+| **L1** RAG · knowledge-base poisoning | **L5** production · guardrails + capstone |
+| **L2** agent · excessive agency + supply chain | |
 
-Day 1 runs **keyless** on a shared model. Day 2 is **BYOK** — bring your own key.
+Warm up on **Gandalf**, then Day 1 runs **keyless** on a shared model. Day 2 is **BYOK** — bring your own key.
 
-<!-- Notes: Set the BYOK expectation loudly and early — Day 2's agent/MCP/multi-agent labs need a frontier model to reliably chain tool calls; the keyless model shows the plumbing but won't autonomously follow a poisoned tool description. Anyone without a key: pair up or use the keyless floor to watch the mechanism. -->
+<!-- Notes: This mirrors the run of show exactly. Day 1 is the model and its data — F0 foundations, then L0 chatbot (M1 injection, M2 output), L1 RAG (M3), L2 agent (M4 supply chain, M5 excessive agency) — all keyless on the shared model. Day 2 is the model with hands — L3 MCP (M6), L4 multi-agent (M7), L5 production + the AI-vs-AI finale (M8). Set BYOK loudly: M6's poisoning and the finale need a frontier key to chain tool calls reliably; keyless llama shows the plumbing and is actually the more reliable choice for M5/M7. Anyone without a key: pair up. -->
+
+<!-- Notes(cont.): Note L2 (agent) is on Day 1 and runs keyless — M5 is a simple single tool-call the shared model handles. The BYOK line is really about M6 and the finale. -->
+
 
 ---
 
