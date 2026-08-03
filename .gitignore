@@ -66,3 +66,6 @@ chromadb/
 
 # Internal instructor reference — never commit (self-contained run of show)
 RUN-OF-SHOW.md
+
+# Participant-facing Anna assessment page — delivered directly, not via the repo
+anna-investigation.html
