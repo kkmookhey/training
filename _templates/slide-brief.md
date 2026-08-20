@@ -7,6 +7,19 @@ Paste this into Claude Design **alongside a module's `slides/mN.md`** to render 
 - Bookend every deck with the **Black Hat trainer title + end slides** (KK has the `USA26-Trainer Template …TITLE AND END SLIDE ONLY.pptx`). The module content sits between them.
 - Export `.pptx` (Black Hat accepts pptx or PDF — either is fine).
 
+**Two ways to render.** Either paste this brief + `slides/mN.md` into Claude Design, or run the
+scripted renderer, which builds straight onto the BH template and applies this house style:
+
+```sh
+.venv-slides/bin/python training/_templates/render_deck.py \
+    training/blackhat-2026-adversarial-ai/M6-mcp-security/slides/m6.md
+```
+
+The renderer keeps BH's cover/title/END slides, maps `## → DEMO` to divider slides, turns
+markdown tables into real PowerPoint tables, and carries `<!-- Notes: -->` into speaker notes.
+It measures wrapped text to size every block, so nothing runs off the slide. Markdown stays the
+source of truth — re-run it after any edit rather than hand-editing the `.pptx`.
+
 ## Typography
 
 - **Display / titles:** `BlackHatDrukTT-Medium` (installed locally on KK's machine; **not shipped in this public repo** — it's a licensed Black Hat asset).

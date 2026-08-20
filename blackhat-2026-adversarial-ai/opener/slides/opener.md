@@ -4,7 +4,8 @@ Render: paste this + _templates/slide-brief.md into Claude Design → opener.ppt
 Convention: each slide separated by `---`; speaker notes in <!-- Notes: ... -->.
 Runs FIRST, before M0. Keep it tight (~12 min) — the room wants to start breaking things.
 Batch-2 revision: adds the "Two ways to play" lane slide, the five-beat rhythm, and the "Meet Anna" intro.
-TODO(KK): fill the Venkat bio slide (his LinkedIn 404'd; nothing was auto-filled).
+Venkat bio backfilled 2026-08-06 from the rendered Opener.pptx (it had been filled in
+PowerPoint only, so a re-render would have put the unfilled placeholders back on stage).
 -->
 
 # Adversarial AI
@@ -107,12 +108,14 @@ At **four points** across the two days we don't just theorise — we **drive Cla
 
 ## Your instructors — Venkat Pothamsetty
 
-- **[Role / company — TODO]**
-- **[Areas of expertise — TODO]**
-- **[Notable credentials / accomplishments — TODO]**
+- **Founder, Transilience AI** — building at the intersection of generative AI, cloud and security.
+- Two decades in security engineering and product: **Cisco** (product manager, Infrastructure Security Services Group), **Threat Stack**, **Cofense**.
+- Builds **autonomous security agents** — Transilience ships agentic pentest, vulnerability and compliance agents in production.
+- Writes and speaks on LLM agent architectures, RAG for security, and the economics of agentic security work.
+- **MBA**, The University of Texas at Austin.
 - `linkedin.com/in/venkatpothamsetty`
 
-<!-- Notes: TODO(KK): paste Venkat's bio — his LinkedIn URL 404'd so nothing was auto-filled. Nothing here is invented. -->
+<!-- Notes: Venkat: 30 seconds, same as KK. Frame the credibility that matters for this room — you build the agentic systems the class is about to attack, so the failure modes in Day 2 are ones you have hit in production. -->
 
 ---
 
