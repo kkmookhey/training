@@ -69,3 +69,15 @@ RUN-OF-SHOW.md
 
 # Participant-facing Anna assessment page — delivered directly, not via the repo
 anna-investigation.html
+
+# ── Slide sources (2026-08-19) ───────────────────────────────────────────────
+# The hand-edited .pptx decks are the source of truth. The .md render sources
+# have diverged from them, so a re-render from .md would silently clobber the
+# PowerPoint edits. Kept LOCALLY (still on disk, diff_deck_vs_source.py still
+# works) but removed from the repo so nobody renders from a stale source.
+# Last tracked state is preserved in git history at commit 2b277e2.
+blackhat-2026-adversarial-ai/*/slides/*.md
+
+# Exceptions — decks with no rendered .pptx yet, so there is no source of truth
+# to defer to. Remove these lines once each has been rendered and hand-checked.
+!blackhat-2026-adversarial-ai/M9-training-data-extraction/slides/m9.md
