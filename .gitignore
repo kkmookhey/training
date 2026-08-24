@@ -81,5 +81,10 @@ blackhat-2026-adversarial-ai/*/slides/*.md
 # (No exceptions. M9's m9.md exception was removed 2026-08-24 once its deck was
 # rendered and hand-edited — the .md is now out of sync like all the others.)
 
+# Build spec for slides that were never rendered into any deck. Kept locally —
+# it is the only copy of that work — but not published. Last tracked content is
+# in history at 2b277e2 if it is ever needed back.
+blackhat-2026-adversarial-ai/coverage-slides.md
+
 # Backups written by _templates/fix_code_blocks.py
 *.pptx.bak
