@@ -78,9 +78,8 @@ anna-investigation.html
 # Last tracked state is preserved in git history at commit 2b277e2.
 blackhat-2026-adversarial-ai/*/slides/*.md
 
-# Exceptions — decks with no rendered .pptx yet, so there is no source of truth
-# to defer to. Remove these lines once each has been rendered and hand-checked.
-!blackhat-2026-adversarial-ai/M9-training-data-extraction/slides/m9.md
+# (No exceptions. M9's m9.md exception was removed 2026-08-24 once its deck was
+# rendered and hand-edited — the .md is now out of sync like all the others.)
 
 # Backups written by _templates/fix_code_blocks.py
 *.pptx.bak
