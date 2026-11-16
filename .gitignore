@@ -70,16 +70,15 @@ RUN-OF-SHOW.md
 # Participant-facing Anna assessment page — delivered directly, not via the repo
 anna-investigation.html
 
-# ── Slide sources (2026-08-19) ───────────────────────────────────────────────
-# The hand-edited .pptx decks are the source of truth. The .md render sources
-# have diverged from them, so a re-render from .md would silently clobber the
-# PowerPoint edits. Kept LOCALLY (still on disk, diff_deck_vs_source.py still
-# works) but removed from the repo so nobody renders from a stale source.
-# Last tracked state is preserved in git history at commit 2b277e2.
-blackhat-2026-adversarial-ai/*/slides/*.md
-
-# (No exceptions. M9's m9.md exception was removed 2026-08-24 once its deck was
-# rendered and hand-edited — the .md is now out of sync like all the others.)
+# ── Slide sources ────────────────────────────────────────────────────────────
+# The hand-edited .pptx decks remain the SOURCE OF TRUTH for slide *content*.
+# The mN.md render-sources have diverged from the decks, so DO NOT re-render a
+# .pptx from its .md — it would silently clobber the PowerPoint edits
+# (diff_deck_vs_source.py still lets you compare the two).
+# These .md are tracked again (as of 2026-11-16) ONLY for their presenter notes
+# (<!-- Notes: ... -->), reworded to read as spoken script delivered to the room.
+# Each file carries a DO-NOT-RE-RENDER banner at its top.
+# Previously ignored 2026-08-19..2026-11-16; prior tracked state at commit 2b277e2.
 
 # Build spec for slides that were never rendered into any deck. Kept locally —
 # it is the only copy of that work — but not published. Last tracked content is

@@ -1,7 +1,7 @@
 # M6 · MCP Security
 
 > **One-line premise:** the tools Iggy trusts describe themselves — poison the description, own the agent.
-> **OWASP:** — · **Eiger layer:** L3 · **Model tier:** BYOK
+> **OWASP:** LLM03 / LLM01 (2026) · MCP03 · **Eiger layer:** L3 · **Model tier:** BYOK
 
 ## Objectives
 - **Core (everyone):** tool-description poisoning — a hidden instruction in a tool description makes Iggy leak data / call an unintended tool.

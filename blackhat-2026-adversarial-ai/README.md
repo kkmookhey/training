@@ -17,21 +17,29 @@ model → RAG → tools/agents → MCP → multi-agent → production
 ## Modules
 
 ### Day 1 — The model and its data
-| Module | Topic | OWASP | Model |
+| Module | Topic | OWASP (2026) | Model |
 |--------|-------|-------|-------|
 | [M0](M0-threat-model/) | Threat model + range check | — | Gandalf (hosted) |
 | [M1](M1-prompt-injection/) | Prompt injection | LLM01 | Ollama (shared, keyless) |
-| [M2](M2-output-handling/) | Output handling & disclosure | LLM05/02 | Ollama (shared, keyless) |
-| [M3](M3-rag-attacks/) | RAG attacks | LLM08 | Ollama (shared, keyless) |
-| [M4](M4-ml-supply-chain/) | Poisoning & ML supply chain | LLM04/03 | none (artifact) |
+| [M2](M2-output-handling/) | Output handling & disclosure | LLM10/02 | Ollama (shared, keyless) |
+| [M3](M3-rag-attacks/) | RAG attacks | LLM09 | Ollama (shared, keyless) |
+| [M4](M4-ml-supply-chain/) | Poisoning & ML supply chain | LLM05/04 | none (artifact) |
 
 ### Day 2 — Agency and autonomy
 | Module | Topic | OWASP | Model |
 |--------|-------|-------|-------|
-| [M5](M5-excessive-agency/) | Excessive agency & tool abuse | LLM06 | BYOK |
-| [M6](M6-mcp-security/) | MCP security | — | BYOK |
-| [M7](M7-multi-agent/) | Multi-agent | — | BYOK |
+| [M5](M5-excessive-agency/) | Excessive agency & tool abuse | LLM03 | BYOK |
+| [M6](M6-mcp-security/) | MCP security | LLM03/01 · MCP03 | BYOK |
+| [M7](M7-multi-agent/) | Multi-agent | LLM01/03 · ASI07/08 | BYOK |
 | [M8](M8-production-defense/) | Production, defense + capstone | — | BYOK |
+
+### Bonus — slides only
+| Module | Topic | OWASP (2026) | Model |
+|--------|-------|-------|-------|
+| [M9](M9-training-data-extraction/) | Training-data extraction | LLM02/08/09 | none |
+| [M10](M10-coding-agents/) | Coding and CI agents | LLM04 · ASI04/05 · MCP09 | none |
+
+OWASP numbers follow the 2026 edition of the LLM Top 10. ASI = OWASP Agentic Top 10, MCP = OWASP MCP Top 10.
 
 ## The lab: Eiger
 

@@ -1,7 +1,7 @@
 # M2 · Output Handling & Disclosure
 
 > **One-line premise:** what Iggy *emits* is as dangerous as what it's told — land an XSS and leak its brain.
-> **OWASP:** LLM05 / LLM02 · **Eiger layer:** L0/L1 · **Model tier:** Ollama (local)
+> **OWASP:** LLM10 / LLM02 (2026) · **Eiger layer:** L0/L1 · **Model tier:** Ollama (local)
 
 ## Objectives
 - **Core (everyone):** land an XSS via a data field Iggy echoes into the chat UI.

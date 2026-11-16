@@ -1,7 +1,7 @@
 # M4 · Poisoning & ML Supply Chain
 
 > **One-line premise:** the model artifact itself is code — loading an untrusted one executes it.
-> **OWASP:** LLM04 / LLM03 · **Eiger layer:** artifact layer (orthogonal to L0–L5) · **Model tier:** none (no live LLM)
+> **OWASP:** LLM05 / LLM04 (2026) · **Eiger layer:** artifact layer (orthogonal to L0–L5) · **Model tier:** none (no live LLM)
 
 ## Objectives
 - **Core (participant):** detect the malicious artifact with the provided tooling (pickle-opcode / unsafe-globals scan).
